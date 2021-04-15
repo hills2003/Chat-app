@@ -50,6 +50,7 @@ function Signin(props) {
             <Card style={{width:'500px'}}>
             
                <form onSubmit={formik.handleSubmit}>
+                   Sign in
                    {error ?<div>{error}</div> :''}
                <Grid container>   
                 <Grid item xs={2}> <label style={{fontSize:'18px'}}> Email:</label> </Grid>
@@ -60,7 +61,7 @@ function Signin(props) {
                         
                         <Grid item xs={2}> <label style={{fontSize:'18px'}}> password: </label></Grid>
                             <Grid item xs={10}>
-                                    <TextField label='password' name='password' onBlur={formik.handleBlur} variant='outlined' style={{margin:'20px'}} color='primary' value={formik.values.password} onChange={formik.handleChange} />
+                                    <TextField label='password' type="password" name='password' onBlur={formik.handleBlur} variant='outlined' style={{margin:'20px'}} color='primary' value={formik.values.password} onChange={formik.handleChange} />
                                      {formik.touched.password && formik.errors.password ? <div>{formik.errors.password}</div>:''}
                                 </Grid>
                          

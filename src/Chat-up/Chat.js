@@ -83,7 +83,7 @@ function Chat(props) {
 
               <form onSubmit={submitter} className={classes.position}>
                   <TextField textColor='white' value={value} label='send msg'  onChange={(e)=>setValue(e.target.value)} color='secondary'/>
-                  <Button variant='outlined' fontSize='small' color='secondary'> <SendIcon /> </Button>
+                  <Button onClick={submitter} variant='outlined' fontSize='small' color='secondary'> <SendIcon /> </Button>
               </form>     
             </CardContent>  
            

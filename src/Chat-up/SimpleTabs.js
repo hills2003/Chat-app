@@ -13,6 +13,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import Status from "./Status";
 import { useAuth } from "../Config/AuthProvider";
 //import {AuthProvider} from "../Config/AuthProvider";
+import Signout from "./Signout";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -88,6 +89,8 @@ export default function SimpleTabs() {
                 {/*<Tab  icon={<HomeIcon />} {...a11yProps(0)} /> */}  
                 <Tab  icon={<ChatBubbleIcon />}  {...a11yProps(1)} />
             </Tabs>
+
+            <Signout />
             
           </Toolbar>
         
