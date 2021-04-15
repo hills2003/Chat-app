@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 //import {signup} from "../Config/AuthProvider";
 import {useAuth }from "../Config/AuthProvider";
 import {useHistory} from "react-router-dom"
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     center:{
