@@ -16,7 +16,8 @@ const useStyles = makeStyles({
         
     },
     flow:{
-        overflow:'auto'
+        overflow:'auto',
+        margin:'15px'
     },
     position:{
         position:'fixed',
