@@ -10,8 +10,8 @@ import {useAuth} from "../Config/AuthProvider";
 const useStyles = makeStyles({
    
     card:{
-        width:'600px',
-        maxWidth:'600px',
+        width:'400px',
+        maxWidth:'400px',
         
         
     },
@@ -41,6 +41,15 @@ function Chat(props) {
                 id:uuidv4(),
                 name:currentUser.email,
             
+            })
+
+
+            database.ref('chats').on('value',(snapshot)=>{
+                let arr =[];
+                snapshot.forEach((snap)=>{
+                    arr.push(snap.val())
+                    setChat(arr);
+                })
             })
         }
         //setChat([...chat,{id:11,text:value}]);
