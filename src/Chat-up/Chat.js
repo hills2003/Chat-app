@@ -57,7 +57,7 @@ function Chat(props) {
         setValue('');
     }
     useEffect((e)=>{
-        database.ref('chats').on('value',(snapshot)=>{
+        database.ref('chats').on('child_added',(snapshot)=>{
             let arr =[];
             snapshot.forEach((snap)=>{
                 arr.push(snap.val())
