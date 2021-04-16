@@ -34,7 +34,7 @@ function Chat(props) {
     const {currentUser} =useAuth();
     const [value ,setValue] =useState('');
     const [chat,setChat]=useState([])
-    const submitter =(e)=>{
+    const submitter = (e)=>{
         e.preventDefault();
         if(value){
             database.ref('chats').push({
@@ -77,9 +77,7 @@ function Chat(props) {
                       <Chatroom key ={chat.id} chat={chat}/>
                   )
               })}    
-                 <div className={classes.ref} ref ={divref}>
-
-                 </div>
+                 <div className={classes.ref} ref ={divref}/>
 
               <form onSubmit={submitter} className={classes.position}>
                   <TextField textColor='white' value={value} label='send msg'  onChange={(e)=>setValue(e.target.value)} color='secondary'/>
