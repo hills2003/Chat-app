@@ -42,7 +42,7 @@ function Chat(props) {
                 id:uuidv4(),
                 name:currentUser.email,
             
-            })
+            });
 
 
             database.ref('chats').on('value',(snapshot)=>{
@@ -58,7 +58,6 @@ function Chat(props) {
         setValue('');
     }
     useEffect((e)=>{
-        divref.current.scrollIntoView(true);
         database.ref('chats').on('value',(snapshot)=>{
             let arr =[];
             snapshot.forEach((snap)=>{
@@ -66,8 +65,13 @@ function Chat(props) {
                 setChat(arr);
             })
         })
+        divref.current.scrollIntoView(true);
     },[])
     
+    const changer =(e)=>{
+        e.preventDefault();
+        setValue(e.target.value)
+    }
     return (
         <>
           <Card className={classes.card}>
@@ -80,7 +84,7 @@ function Chat(props) {
                  <div className={classes.ref} ref ={divref}/>
 
               <form onSubmit={submitter} className={classes.position}>
-                  <TextField textColor='white' value={value} label='send msg'  onChange={(e)=>setValue(e.target.value)} color='secondary'/>
+                  <TextField textColor='white' value={value} label='send msg'  onChange={changer} color='secondary'/>
                   <Button onClick={submitter} variant='outlined' fontSize='small' color='secondary'> <SendIcon /> </Button>
               </form>     
             </CardContent>  

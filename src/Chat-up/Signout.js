@@ -3,6 +3,9 @@ import {Button } from "@material-ui/core";
 import {useAuth} from "../Config/AuthProvider";
 import {auth } from "../Config/AuthProvider";
 import {useHistory} from "react-router-dom";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import IconButton from '@material-ui/core/IconButton';
+
 function Signout(props) {
     const {Logout} =useAuth();
     const history =useHistory();
@@ -18,10 +21,12 @@ function Signout(props) {
         }
     }
     return (
-        <div>
+        <>
             {error ? <div>{error}</div> : ''}
-            <Button onClick={signout} variant='contained'>signout</Button>
-        </div>
+            <IconButton edge="end" onClick={signout}>
+               <ExitToAppIcon />
+            </IconButton>
+        </>
     );
 }
 
