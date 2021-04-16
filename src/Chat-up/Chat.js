@@ -57,15 +57,16 @@ function Chat(props) {
         setValue('');
     }
     useEffect((e)=>{
-        database.ref('chats').on('child_added',(snapshot)=>{
+        divref.current.scrollIntoView(true);
+        database.ref('chats').on('value',(snapshot)=>{
             let arr =[];
             snapshot.forEach((snap)=>{
                 arr.push(snap.val())
                 setChat(arr);
             })
         })
-        divref.current.scrollIntoView(true);
-    },[])
+       
+    },[]) 
     
     const changer =(e)=>{
         e.preventDefault();
