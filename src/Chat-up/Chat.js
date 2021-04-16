@@ -43,6 +43,7 @@ function Chat(props) {
                 name:currentUser.email,
             
             });
+            divref.current.scrollIntoView(true);
 
         }
         // database.ref('chats').on('child_added',(snapshot)=>{
@@ -53,7 +54,7 @@ function Chat(props) {
         //     })
         // })
         //setChat([...chat,{id:11,text:value}]);
-        divref.current.scrollIntoView(true);
+        
         setValue('');
     }
     useEffect((e)=>{
