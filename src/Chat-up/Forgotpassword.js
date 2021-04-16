@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import blue from "../image/blue.jpg";
 import { Link } from "react-router-dom";
 import {useAuth} from "../Config/AuthProvider";
+import Alert from "@material-ui/lab/Alert";
 
 const useStyles = makeStyles({
     center:{
@@ -48,13 +49,13 @@ function Forgotpassword(props) {
             <Card>
             
                <form onSubmit={formik.handleSubmit}>
-                   {error?<div>{error}</div> :''}
-                   {message ?<div>{message}</div> : ''}
+                   {error?<Alert severity='error'>{error}</Alert> :''}
+                   {message ?<Alert severity="info">{message}</Alert> : ''}
                <Grid container>   
                     <Grid item xs={2}> <label style={{fontSize:'18px'}}> Email:</label> </Grid>
                             <Grid item xs={10}>
                                 <TextField label='email' name='email' onBlur={formik.handleBlur} style={{margin:'20px'}} variant='outlined' color='primary' value={formik.values.email} onChange={formik.handleChange} />
-                                {formik.touched.email && formik.errors.email ?<div>{formik.errors.email}</div>:''}
+                                {formik.touched.email && formik.errors.email ?<Alert severity="error">{formik.errors.email}</Alert>:''}
                             </Grid>
                             
                         <br />

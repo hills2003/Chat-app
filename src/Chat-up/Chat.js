@@ -33,7 +33,7 @@ function Chat(props) {
     const divref =useRef();
     const {currentUser} =useAuth();
     const [value ,setValue] =useState('');
-    const [chat,setChat]=useState([])
+    const [chat,setChat]=useState(new Array());
     const submitter = (e)=>{
         e.preventDefault();
         if(value){
@@ -57,7 +57,6 @@ function Chat(props) {
         setValue('');
     }
     useEffect((e)=>{
-        divref.current.scrollIntoView(true);
         database.ref('chats').on('value',(snapshot)=>{
             let arr =[];
             snapshot.forEach((snap)=>{
@@ -65,8 +64,8 @@ function Chat(props) {
                 setChat(arr);
             })
         })
-       
-    },[]) 
+        divref.current.scrollIntoView(true);
+    },[])
     
     const changer =(e)=>{
         e.preventDefault();
