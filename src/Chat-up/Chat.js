@@ -10,8 +10,8 @@ import {useAuth} from "../Config/AuthProvider";
 const useStyles = makeStyles({
    
     card:{
-        width:'400px',
-        maxWidth:'400px',
+        width:'450px',
+        maxWidth:'450px',
         
         
     },
@@ -51,20 +51,20 @@ function Chat(props) {
         
         
     }
-    useEffect((e)=>{
-        database.ref('chats').on('value',(snapshot)=>{
-            let arr =[];
-            snapshot.forEach((snap)=>{
-                arr.push(snap.val())
-                setChat(arr);
-            })
-        })
-        divref.current.scrollIntoView(true);
-    },[value])
+    // useEffect((e)=>{
+    //     database.ref('chats').on('value',(snapshot)=>{
+    //         let arr =[];
+    //         snapshot.forEach((snap)=>{
+    //             arr.push(snap.val())
+    //             setChat(arr);
+    //         })
+    //     })
+    //     divref.current.scrollIntoView(true);
+    // },[value])
 
 
     useEffect((e)=>{
-        database.ref('chats').on('value',(snapshot)=>{
+       database.ref('chats').on('value',(snapshot)=>{
             let arr =[];
             snapshot.forEach((snap)=>{
                 arr.push(snap.val())
@@ -82,7 +82,7 @@ function Chat(props) {
         <>
           <Card className={classes.card}>
             <CardContent className={classes.flow}>
-              {chat.map((chat) => {
+              {chat && chat.map((chat) => {
                   return (
                       <Chatroom key ={chat.id} chat={chat}/>
                   )

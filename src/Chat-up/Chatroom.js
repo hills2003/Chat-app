@@ -4,6 +4,7 @@ import { ChatSharp } from '@material-ui/icons';
 import { useAuth } from "../Config/AuthProvider";
 import Tippy  from  "@tippyjs/react";
 import Avatar from '@material-ui/core/Avatar';
+import { database } from '../Config/Firebase';
 const useStyles = makeStyles({
     para1:{
         background:'blue',
@@ -34,12 +35,13 @@ const useStyles = makeStyles({
 function Chatroom({chat}) {
     const classes = useStyles();
     const { currentUser } =useAuth();
-
+   
     var username =currentUser.email;
-    var avat = username[0];        
+    var avat = username[0];       
+    
     return (
         <div className={chat.name  == currentUser.email ? classes.right : classes.left}>
-            <Avatar style={{textTransform:'capitalize',fontSize:'14px', width:'30px',height:'30px'}}>{chat.name[0]}</Avatar><h5 className={chat.name  == currentUser.email  ? classes.para2 : classes.para1 }>{chat.text} </h5>
+            <Avatar alt={chat.name[0]}  style={{textTransform:'capitalize',fontSize:'14px', width:'30px',height:'30px'}} /><h5 className={chat.name  == currentUser.email  ? classes.para2 : classes.para1 }>{chat.text} </h5>
         </div>
         
         

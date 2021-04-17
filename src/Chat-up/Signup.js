@@ -14,6 +14,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import Alert from "@material-ui/lab/Alert";
+import Upload from "./Upload";
 
 
 const useStyles = makeStyles({

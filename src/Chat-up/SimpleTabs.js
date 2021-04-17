@@ -18,6 +18,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Menu from '@material-ui/core/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import MenuItem from '@material-ui/core/MenuItem';
+import Upload from './Upload';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -93,8 +94,8 @@ export default function SimpleTabs() {
                 {/*<Tab  icon={<HomeIcon />} {...a11yProps(0)} /> */}  
                 <Tab  icon={<ChatBubbleIcon />}  {...a11yProps(1)} />
             </Tabs>
-
-            <Signout/>
+            <Upload />
+            <Signout/> 
           </Toolbar>
         
       </AppBar>

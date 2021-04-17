@@ -7,6 +7,7 @@ import Signup from "./Signup";
 import Forgotpassword from "./Forgotpassword";
 import PrivateRoute from "./PrivateRoute";
 import Signout from "./Signout";
+import Upload from './Upload';
 
 function MainRoute(props) {
 
