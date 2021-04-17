@@ -14,6 +14,10 @@ import Status from "./Status";
 import { useAuth } from "../Config/AuthProvider";
 //import {AuthProvider} from "../Config/AuthProvider";
 import Signout from "./Signout";
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Menu from '@material-ui/core/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import MenuItem from '@material-ui/core/MenuItem';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -91,8 +95,6 @@ export default function SimpleTabs() {
             </Tabs>
 
             <Signout/>
-           
-            
           </Toolbar>
         
       </AppBar>

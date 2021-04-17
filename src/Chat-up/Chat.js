@@ -44,19 +44,25 @@ function Chat(props) {
             
             });
             divref.current.scrollIntoView(true);
+            setValue('');
 
         }
-        // database.ref('chats').on('child_added',(snapshot)=>{
-        //     let arr =[];
-        //     snapshot.forEach((snap)=>{
-        //         arr.push(snap.val())
-        //         setChat([...chat,arr]);
-        //     })
-        // })
-        //setChat([...chat,{id:11,text:value}]);
+       
         
-        setValue('');
+        
     }
+    useEffect((e)=>{
+        database.ref('chats').on('value',(snapshot)=>{
+            let arr =[];
+            snapshot.forEach((snap)=>{
+                arr.push(snap.val())
+                setChat(arr);
+            })
+        })
+        divref.current.scrollIntoView(true);
+    },[value])
+
+
     useEffect((e)=>{
         database.ref('chats').on('value',(snapshot)=>{
             let arr =[];

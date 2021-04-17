@@ -98,7 +98,7 @@ function Signup(props) {
                             
                         <br />
                         <Grid item xs={2}>
-                            <Button disabled={button} variant='outlined' color='primary' type='submit'>submit</Button>
+                            <Button disabled={button} variant='outlined' color='primary' type='submit'>Sign up</Button>
                         </Grid>
 
                         

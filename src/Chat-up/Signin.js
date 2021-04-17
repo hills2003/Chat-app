@@ -63,7 +63,7 @@ function Signin(props) {
             <Card style={{width:'500px'}}>
             
                <form onSubmit={formik.handleSubmit}>
-                   Sign in
+                   <bold>Log In</bold>
                    {error ?<Alert severity="error">{error} </Alert> :''}
                <Grid container>   
                 <Grid item xs={2}> <label style={{fontSize:'18px'}}> Email:</label> </Grid>
@@ -80,7 +80,7 @@ function Signin(props) {
                          
                        
                         <Grid item xs={2}>
-                            <Button disabled={button} size='small' variant='outlined' color='primary' type='submit'>submit</Button>
+                            <Button disabled={button} size='small' variant='outlined' color='primary' type='submit'>Log In</Button>
                         </Grid>
                         
                         </Grid>          
