@@ -8,6 +8,7 @@ import Forgotpassword from "./Forgotpassword";
 import PrivateRoute from "./PrivateRoute";
 import Signout from "./Signout";
 import Upload from './Upload';
+import Animation from "./Animation";
 
 function MainRoute(props) {
 
@@ -16,7 +17,7 @@ function MainRoute(props) {
         <Router>
             <AuthProvider>
                 <Switch>
-                   <PrivateRoute exact path="/" component={SimpleTabs}/>
+                   <Route exact path="/" component={Animation}/>
                    <Route path="/signin" component={Signin} />
                    <Route  path="/signup" component={Signup} />
                    <Route  path="/signout" component={Signout} />
